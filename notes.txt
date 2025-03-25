@@ -1,0 +1,3 @@
+we will need basic test scripts for our project so we can write it that time
+while writing for error it is good to maintain a enum mapping name of error code and its value we do this in gitignore always dont write raw values so we use a package http-status-codes which have enum mapped for us
+you should never add nodemodules as it is heavy so put inside it in gitignore
