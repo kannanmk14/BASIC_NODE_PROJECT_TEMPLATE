@@ -1,63 +1,61 @@
 const {logger}=require("../config");
+const {StatusCodes}=require("http-status-codes");
+const { AppError } = require("../utils");
 class crudRepository{
     constructor(model){
        this.model=model;
     }
     async create(data){
-        console.log("Inside Repository");
-        console.log("db creation");
-        try{
+        // console.log("Inside Repository");
+        // console.log("db creation");
+        // try{
             const response=await this.model.create(data);
             return response;
-        }catch(e){
-            logger.error("Something went wrong in the Crud Repo : create");
-            throw e;
-        }
+        // }
+        // catch(e){
+        //     logger.error("Something went wrong in the Crud Repo : create");
+        //     throw e;
+        // }
 
 
     }
-    async destroy(data){
-        try{
+    async destroy(id){
             const response =await this.model.destroy({
                 where:{
-                    id:data
+                    id:id
                 }
-            })
-        }catch(e){
-            logger.error("Something went wrong in the Crud Repo : destroy");
-            throw e;
-        }
+            });
+            if(!response){
+                throw new AppError("Not able to find the resource",StatusCodes.NOT_FOUND)
+            }
+            return response;
+
+        
     }
     async get(data){
-        try{
             const response=await this.model.findByPk(data);
+            if(!response){
+                throw new AppError("Not able to find the resource",StatusCodes.NOT_FOUND);
+            }
+            console.log(response);
             return response;
-        }catch(e){
-            logger.error("Something went wrong in the Crud Repo : get");
-            throw e;
-        }
+        
     }
     async getAll(data){
-        try{
+        
             const response=await this.model.findAll();
             return response;
-        }catch(e){
-            logger.error("Something went wrong in the Crud Repo : getAll");
-            throw e;
-        }
+        
     }
     async update(id,data){
-        try{
+        
             const response=await this.model.update(data,{
                where:{
                 id:id
                }
             });
             return response;
-        }catch(e){
-            logger.error("Something went wrong in the Crud Repo : update");
-            throw e;
-        }
+        
     }
 }
 

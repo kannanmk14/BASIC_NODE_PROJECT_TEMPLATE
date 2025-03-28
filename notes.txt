@@ -9,5 +9,20 @@ after that when we add in migration folder constraints it actually add constrain
 
 when we commit migration it checks prev migration using the unique migration number and add it
 
+npx sequelize seed:generate --name add-airplanes to add files in to add data what we want in db
+
+if you want to seed in specific file use (sequelize db:seed --seed my_sender_nams.js) 
+
+we are going to see component for microservices and let us see system design
+to undo similar to migration one
 when migrate up function called 
 when undo down function called
+
+travel history is important for maintaining data so that user can view in how much rs i have spent before after years  
+
+client side always doesnt deal with server first all client goes to load balancer then from load balancer deal with a server
+
+let us see about search services our search service gets good amount of load another thing is booking service
+once search service is done sends its detail to booking service then remainder service  
+
+let us remove try catch from crud repository because we can handle it in services
