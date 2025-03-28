@@ -2,3 +2,12 @@ we will need basic test scripts for our project so we can write it that time
 while writing for error it is good to maintain a enum mapping name of error code and its value we do this in gitignore always dont write raw values so we use a package http-status-codes which have enum mapped for us
 you should never add nodemodules as it is heavy so put inside it in gitignore
 config.json file is confidendial so make it gitignore but other also need to setup username and password for them als we need to make it initialize
+
+when i create a database and and add sequelize command init it adds all migration model seeders then we create command db create in sequelize then we db created and add model with attributes
+when we add attributes it adds in model folder and migrations folder in migration it have properties that table have when created in model when we add constraints it only listens at js level through js code when we add it throw error
+after that when we add in migration folder constraints it actually add constraints in db level
+
+when we commit migration it checks prev migration using the unique migration number and add it
+
+when migrate up function called 
+when undo down function called

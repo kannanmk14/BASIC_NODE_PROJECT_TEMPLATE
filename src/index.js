@@ -3,6 +3,8 @@ const express=require("express");
 
  const apiRoute=require("./routes");
  const {ServerConfig,logger}=require("./config");
+ app.use(express.json());
+ app.use(express.urlencoded({extended:true}));
  app.use("/api",apiRoute);
  
  app.listen(ServerConfig.PORT,()=>{
