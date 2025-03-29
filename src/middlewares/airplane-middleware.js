@@ -18,5 +18,5 @@ function Airplanemiddleware(req,res,next){
 }
 
 module.exports={
-    Airplanemiddleware
+    Airplanemiddleware,
 }

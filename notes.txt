@@ -26,3 +26,5 @@ let us see about search services our search service gets good amount of load ano
 once search service is done sends its detail to booking service then remainder service  
 
 let us remove try catch from crud repository because we can handle it in services
+
+for making foreign key cityId in Airport table manually do it db level

@@ -70,4 +70,15 @@ async function destroyAirplane(id){
     }
 }
 
-module.exports={createAirplane,getAirplanes,getAirplane,destroyAirplane};
+async function updateAirplane(id,data){
+    try{
+        const Airplane=await airplaneRepository.update(id,data);
+        return Airplane;
+    }catch(e){
+        if(e.StatusCodes==StatusCodes.NOT_FOUND){
+            throw new AppError("The Airplane you request is not present",e.StatusCode)
+        }
+        throw new AppError('The Airplane you requested is not present',StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
+module.exports={createAirplane,getAirplanes,getAirplane,destroyAirplane,updateAirplane};
