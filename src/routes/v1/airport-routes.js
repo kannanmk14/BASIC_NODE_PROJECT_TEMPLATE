@@ -1,0 +1,10 @@
+const express=require("express");
+const Router=express.Router();
+const {AirportController}=require("../../controllers");
+const {Airportmiddlewares}=require("../../middlewares");
+Router.post("/",Airportmiddlewares.Airportmiddleware,AirportController.createAirport);
+Router.get("/",AirportController.getAirports);
+Router.get("/:id",AirportController.getAirport);
+Router.delete("/:id",AirportController.destroyAirport);
+Router.put("/:id",AirportController.updateAirport);
+module.exports=Router;

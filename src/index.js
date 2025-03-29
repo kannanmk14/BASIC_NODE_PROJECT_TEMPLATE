@@ -11,7 +11,7 @@ const express=require("express");
     console.log(`API is up and running ${ServerConfig.PORT}`);
    //  logger.info("Successfully started the server",{});
    //bad codes
-   const {city,Airplane}=require("./models");
+   // const {city,Airplane}=require("./models");
    // const Tirunelveli=await city.findByPk(1);
    // console.log(City);
    //   const airport=await Tirunelveli.createAirport({name:"thevar",code:"MAR",cityId:Tirunelveli.id});//without cityId also works
